@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>청사진</title>
+  <style>
+    
+    .color-change {
+      background-color: #f0f0f0;
+      padding: 15px;
+      border: 2px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      text-align: center;
+      font-size:150%;
+      
+    }
+
+  
+    .start-button {
+      background-color: #f0f0f0;
+      padding: 50px;
+      border: 2px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin: 350px 0px;
+      font-size:200%;
+    }
+
+    
+    .question {
+      display: none;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size:150%;
+    }
+  
+    .im{
+        
+      background-color: #f0f0f0;
+      padding: 20px;
+      border: 2px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      text-align: center;
+      width:48px;height:48px
+    }
+    img {
+      width:45vw;
+      height:calc(45vw * 2/3);
+      text-align: center;
+      display: block;
+      margin:auto
+    }
+    h1{
+        text-align: center;
+      font-size:270%;
+    }
+  
+  </style>
+</head>
+<body>
+    <h1>나에게 맞는 여행지 추천</h1>
+  
+  <div class="start-button color-change" onclick="start()" id="startButton" onmouseover="changeColor(this)" onmouseout="resetColor(this)" >
+    시작하기
+  </div>
+ 
+ 
+  <table style="margin-left:auto;margin-right:auto;">
+    <tr>
+        <td><img src="im/su.jpg" class="color-change" data-question="1" onclick="nextQuestion(1);rec1();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)" ></td>
+        <td> <img src="im/hill.jpg" class="color-change" data-question="1" onclick="nextQuestion(1);rec2();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)"></td>
+    </tr>
+</table>
+  <div class="question" id="question1" style="display: none;">엑티비티나 체험형 관광을 선호하시나요? 아니면 휴식과 힐링 중심의 여행을 원하시나요?</div>
+  <div class="color-change" data-question="1" onclick="nextQuestion(1);rec1();" style="display: none; " onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    활동적인 여행
+  </div>
+  <div class="color-change" data-question="1" onclick="nextQuestion(1);rec2();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    휴식 중심 여행
+  </div>
+  
+  <table style="margin-left:auto;margin-right:auto;">
+    <tr>
+        <td><img src="im/in.jpg" class="color-change" data-question="2" onclick="nextQuestion(2);rec1();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)" ></td>
+        <td> <img src="im/out.jpg" class="color-change" data-question="2" onclick="nextQuestion(2);rec2();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)"></td>
+    </tr>
+</table>
+  <div class="question" id="question2" style="display: none;">실내와 실외 중 어떤 곳을 더 좋아하나요?</div>
+  <div class="color-change" data-question="2" onclick="nextQuestion(2);rec1();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    실내
+  </div>
+  <div class="color-change" data-question="2" onclick="nextQuestion(2);rec2();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    실외
+  </div>
+
+  
+  <table style="margin-left:auto;margin-right:auto;">
+    <tr>
+        <td><img src="im/sea.jpg" class="color-change" data-question="3" onclick="nextQuestion(3);rec1();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)" ></td>
+        <td> <img src="im/land.jpg" class="color-change" data-question="3" onclick="nextQuestion(3);rec2();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)"></td>
+    </tr>
+</table>
+  <div class="question" id="question3" style="display: none;">바다와 내륙 중 어디를 더 선호하시나요?</div>
+  <div class="color-change" data-question="3" onclick="nextQuestion(3);rec1();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    바다
+  </div>
+  <div class="color-change" data-question="3" onclick="nextQuestion(3);rec2();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    내륙
+  </div>
+
+  
+  <table style="margin-left:auto;margin-right:auto;">
+    <tr>
+        <td><img src="im/so.jpg" class="color-change" data-question="4" onclick="nextQuestion(4);rec1();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)" ></td>
+        <td> <img src="im/ci.jpg" class="color-change" data-question="4" onclick="nextQuestion(4);rec2();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)"></td>
+    </tr>
+</table>
+  <div class="question" id="question4" style="display: none;">시골과 도시 중 어떤 곳을 더 선호하시나요?</div>
+  <div class="color-change" data-question="4" onclick="nextQuestion(4);rec1();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    시골
+  </div>
+  <div class="color-change" data-question="4" onclick="nextQuestion(4);rec2();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    도시
+  </div>
+  
+
+ 
+  <table style="margin-left:auto;margin-right:auto;">
+    <tr>
+        <td><img src="im/fo.jpg" class="color-change" data-question="5" onclick="nextQuestion(5);rec1();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)" ></td>
+        <td> <img src="im/ro.jpg" class="color-change" data-question="5" onclick="nextQuestion(5);rec2();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)"></td>
+    </tr>
+</table>
+
+  <div class="question" id="question5" style="display: none;"> 여행 중 먹는 것과 머무는 곳 중 무엇이 더 중요한가요?</div>
+  <div class="color-change" data-question="5" onclick="nextQuestion(5);rec1();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    먹는게 제일 중요합니다
+  </div>
+  <div class="color-change" data-question="5" onclick="nextQuestion(5);rec2();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    쉬는 곳이 가장 중요합니다
+  </div>
+ 
+
+  
+  <table style="margin-left:auto;margin-right:auto;">
+    <tr>
+        <td><img src="im/sun.jpg" class="color-change" data-question="6" onclick="nextQuestion(6);rec1();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)" ></td>
+        <td> <img src="im/moon.jpg" class="color-change" data-question="6" onclick="nextQuestion(6);rec2();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)"></td>
+    </tr>
+</table>
+  <div class="question" id="question6" style="display: none;">낮 풍경과 밤 풍경 중 무엇을 더 중요시 하시나요?</div>
+  <div class="color-change" data-question="6" onclick="nextQuestion(6);rec1();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+  낮 풍경
+  </div>
+  <div class="color-change" data-question="6" onclick="nextQuestion(6);rec2();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    밤 풍경
+  </div>
+
+  
+  <table style="margin-left:auto;margin-right:auto;">
+    <tr>
+        <td><img src="im/mp.jpg" class="color-change" data-question="7" onclick="nextQuestion(7);rec1();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)" ></td>
+        <td> <img src="im/al.jpg" class="color-change" data-question="7" onclick="nextQuestion(7);rec2();" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)"></td>
+    </tr>
+</table>
+  <div class="question" id="question7" style="display: none;">사람들이 많은 것과 적은 것 중 무엇을 더 선호하나요?</div>
+  <div class="color-change" data-question="7" onclick="nextQuestion(7);rec1();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    사람들과 함께하기
+  </div>
+  <div class="color-change" data-question="7" onclick="nextQuestion(7);rec2();" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    자신에게 집중하기
+  </div>
+
+  
+  <table style="margin-left:auto;margin-right:auto;">
+    <tr>
+        <td><img src="im/tr.jpg" class="color-change" data-question="8" onclick="rec1();end();nextQuestion(8);" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)" ></td>
+        <td> <img src="im/pr.jpg" class="color-change" data-question="8" onclick="rec2();end();nextQuestion(8);" style="display: none;"  onmouseover="changeColor(this)" onmouseout="resetColor(this)"></td>
+    </tr>
+</table>
+  <img class="answerp" id="answerp" style="display: none;" src="">
+  <div class="question" id="question8" style="display: none;">역사적인 것을 보는 것을 좋아하나요?</div>
+  <div class="color-change" data-question="8" onclick="rec1();end();nextQuestion(8);" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    네
+  </div>
+  <div class="color-change" data-question="8" onclick="rec2();end();nextQuestion(8);" style="display: none;" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+    아니요
+  </div>
+
+  
+ 
+
+  <script>
+    let currentQuestion = 0;
+    const res = []; 
+    let ano='여기';
+    let ano_p = '';
+    
+
+    function start() {
+      currentQuestion = 1; 
+      document.querySelector('#startButton').style.display = 'none'; 
+      showQuestion(currentQuestion);
+    }
+
+    
+    function showQuestion(questionNumber) {
+    
+      document.querySelectorAll('.question').forEach(question => {
+        question.style.display = 'none';
+      });
+
+     
+      document.querySelector('#question' + questionNumber).style.display = 'block';
+
+      
+      document.querySelectorAll('.color-change').forEach(option => {
+        option.style.display = 'none'; 
+      });
+
+     
+      document.querySelectorAll('.color-change[data-question="' + questionNumber + '"]').forEach(option => {
+        option.style.display = 'block';
+      });
+    }
+
+    function nextQuestion(questionNumber) {
+      
+      if (questionNumber === 1) {
+        
+        currentQuestion = 2; 
+        showQuestion(currentQuestion);
+      } else if (questionNumber === 2) {
+       
+        currentQuestion = 3; 
+        showQuestion(currentQuestion);
+      } else if (questionNumber === 3) {
+        currentQuestion = 4;
+        showQuestion(currentQuestion);
+      } else if (questionNumber === 4) {
+        currentQuestion = 5; 
+        showQuestion(currentQuestion);
+      } else if (questionNumber === 5) {
+        currentQuestion = 6;
+        showQuestion(currentQuestion);
+      } else if (questionNumber === 6) {
+        currentQuestion = 7; 
+        showQuestion(currentQuestion);
+      } else if (questionNumber === 7) {
+        currentQuestion = 8;
+        showQuestion(currentQuestion);
+      } else if (questionNumber === 8) {
+       
+       
+        document.querySelectorAll('.color-change').forEach(option => {
+          option.style.display = 'none';
+       
+          
+        
+
+        });
+        document.querySelectorAll('.question').forEach(option => {
+          option.style.fontSize = '300%';
+          option.style.color = 'blue';
+          option.style.margin= '20px 0px';
+          option.style.padding = '0px 20px'
+          
+        });
+
+        document.querySelectorAll('.answerp').forEach(option => {
+          option.style.display = 'block';
+        });
+
+        document.getElementById("answerp").src = ano_p;
+        document.querySelector('#question8').innerText = '당신과 맞는 여행지는 ' + ano + '입니다!';
+      }
+    }
+
+    function changeColor(element) {
+      element.style.backgroundColor = '#ffcc00'; 
+    }
+
+    
+    function resetColor(element) {
+      element.style.backgroundColor = '#f0f0f0'; 
+    }
+
+    
+    function rec1() {
+        res.push(1);
+    }
+    function rec2() {
+        res.push(2);
+    } 
+        function end() {
+   /*처음*/         
+if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 1 &&
+    res[4] === 1 &&
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 1 
+  ) {
+    ano = "제주도";
+    ano_p = "im/jeju.jpg";
+  }
+
+
+
+/*8개*/
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 2 &&
+    res[4] === 1 &&
+    res[5] === 1 &&
+    res[6] === 2 &&
+    res[7] === 1
+  ) {
+    ano = "한옥마을";
+    ano_p = "im/pis.jpg";
+    
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 1 &&
+    res[2] === 1 &&
+    res[3] === 2 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 2
+  ) {
+    ano = "대전 엑스포 아쿠아리움";
+    ano_p = "im/pis.jpg";
+    
+  }
+
+
+else if (
+    res[0] === 1 &&
+    res[1] === 1 &&
+    res[2] === 1 &&
+    res[3] === 1 &&
+    res[4] === 1 &&
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 1
+  ) {
+    ano = "가평 빠지";
+    ano_p = "im/bba.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 1 &&
+    res[2] === 2 &&
+    res[3] === 2 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 2 
+  ) {
+    ano = "서울 플라스틱 앤 바이닐 (현대)";
+    ano_p = "im/lp.jpg";
+  }
+
+
+
+
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 2 &&
+    res[6] === 2 &&
+    res[7] === 1 
+  ) {
+    ano = "DMZ";
+    ano_p = "im/dmz.jpg";
+  }
+
+
+
+  
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 2 &&
+    res[6] === 2 &&
+    res[7] === 2 
+  ) {
+    ano = "동궁과 월지";
+    ano_p = "im/dg.jpg";
+  }
+
+
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 2 &&
+    res[7] === 2 
+  ) {
+    ano = "지리산 패러글라이딩";
+    ano_p = "im/jp.jpg";
+  }
+
+
+
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 1 &&
+    res[5] === 2 &&
+    res[6] === 2 &&
+    res[7] === 1 
+  ) {
+    ano = "안반데기";
+    ano_p = "im/ab.jpg";
+  }
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 2 &&
+    res[7] === 2 
+  ) {
+    ano = "피나클랜드";
+    ano_p = "im/pl.jpg";
+  }
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 2 &&
+    res[4] === 2 &&
+    res[5] === 2 &&
+    res[6] === 2 &&
+    res[7] === 2 
+  ) {
+    ano = "피나클랜드";
+    ano_p = "im/pl.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 2 &&
+    res[7] === 2 
+  ) {
+    ano = "카멜리아힐";
+    ano_p = "im/ch.jpg";
+    
+  }
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 1 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 2 
+  ) {
+    ano = "거제 정글 돔";
+    ano_p = "im/gg.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 2 &&
+    res[7] === 2 
+  ) {
+    ano = "설악산";
+    ano_p = "im/sa.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 2
+  ) {
+    ano = "남이섬";
+    ano_p = "im/mi.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 2
+  ) {
+    ano = "선녀바위 해수욕장";
+    ano_p = "im/sh.jpg";
+  }
+
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 2 &&
+    res[7] === 2
+  ) {
+    ano = "소야도";
+    ano_p = "im/so.jpg";
+  }
+
+
+
+/*7개*/
+
+
+else if (
+    res[0] === 1 &&
+    res[1] === 1 &&
+    res[2] === 2 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 2
+  ) {
+    ano = "제주 로봇스퀘어";
+    ano_p = "im/lob.jpg";
+  }
+
+
+else if (
+    res[0] === 1 &&
+    res[1] === 1 &&
+    res[2] === 1 &&
+    res[3] === 2 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+  
+    res[7] === 2 
+  ) {
+    ano = "제주 노형 슈퍼마켙";
+    ano_p = "im/sup.jpg";
+  }
+
+
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[6] === 1 &&
+    res[7] === 1 
+  ) {
+    ano = "온양온천";
+    ano_p = "im/ony.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[7] === 1 
+  ) {
+    ano = "석굴암";
+    ano_p = "im/suc.jpg";
+  }
+
+else if (
+    res[0] === 1 &&
+    res[2] === 2 &&
+    res[3] === 2 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 2 
+  ) {
+    ano = "롯데월드";
+    ano_p = "im/lot.png";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+  
+    res[7] === 1 
+  ) {
+    ano = "현충사";
+    ano_p = "im/h.gif";
+  }
+
+
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+    res[6] === 1 
+   
+  ) {
+    ano = "청도 소싸움 축제";
+    ano_p = "im/ss.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 1 &&
+    res[5] === 1 &&
+    res[6] === 2 
+ 
+  ) {
+    ano = "담양 죽녹원";
+    ano_p = "im/dn.jpg";
+  }
+
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+   
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 1 
+  ) {
+    ano = "지리산 천왕봉";
+    ano_p = "im/jc.jpg";
+  }
+
+
+  
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 2 &&
+    res[6] === 1 
+  
+  ) {
+    ano = "성산일출봉";
+    ano_p = "im/si.jpg";
+  }
+else if (
+    res[0] === 2 &&
+    res[1] === 1 &&
+    res[2] === 2 &&
+    res[3] === 2 &&
+    res[4] === 2 &&
+   
+    res[6] === 1 &&
+    res[7] === 2 
+  ) {
+    ano = "부산 뮤지엄 원";
+    ano_p = "im/bu.webp";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 1 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 &&
+   
+    res[7] === 1 
+  ) {
+    ano = "강화도 환선굴";
+    ano_p = "im/jh.jpg";
+  }
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 1 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 2 &&
+   
+    res[7] === 2 
+  ) {
+    ano = "춘천 애니메이션 박물관";
+    ano_p = "im/ca.jpg";
+  }
+
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 1 &&
+    res[4] === 1 &&
+    res[5] === 1 &&
+   
+    res[7] === 2
+  ) {
+    ano = "태안 갯벌";
+    ano_p = "im/tg.jpg";
+  }
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 1 &&
+    res[2] === 1 &&
+    res[3] === 2 &&
+    res[4] === 2 &&
+
+    res[6] === 1 &&
+    res[7] === 2 
+  ) {
+    ano = "포항 풀빌라 데이토나";
+    ano_p = "im/pb.jpg";
+  }
+
+
+/*6개*/
+
+else if (
+    
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 2
+  ) {
+    ano = "경북 용추계곡";
+    ano_p = "im/yo.jpg";
+  }
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 1 &&
+    res[2] === 1 &&
+    res[3] === 2 &&
+    res[6] === 2 &&
+    res[7] === 2
+  ) {
+    ano = "여수 카페 모이핀";
+    ano_p = "im/cf.jpg";
+  }
+
+
+
+
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 2 &&
+    res[4] === 1 &&
+    res[5] === 2 
+
+  ) {
+    ano = "우포늪";
+    ano_p = "im/up.jpg";
+  }
+
+
+
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    
+    res[5] === 1 &&
+  
+    res[7] === 1 
+  ) {
+    ano = "설악산 신선대 공룡능선";
+    ano_p = "im/go.jpg";
+  }
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 1 &&
+    res[4] === 2 &&
+    res[5] === 1 
+ 
+  ) {
+    ano = "울릉도 해안도로";
+    ano_p = "im/hd.jpg";
+  }
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 1 &&
+
+    res[6] === 2 
+   
+  ) {
+    ano = "보성 녹차밭";
+    ano_p = "im/no.jpg";
+  }
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+  
+    res[5] === 1 &&
+  
+    res[7] === 1 
+  ) {
+    ano = "광한루";
+    ano_p = "im/ga.jpg";
+  }
+
+
+else if (
+   
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 2 &&
+    res[4] === 2 &&
+
+    res[6] === 1 &&
+    res[7] === 1 
+  ) {
+    ano = "한강";
+    ano_p = "im/ha.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+   
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 1 
+  ) {
+    ano = "전주한옥마을";
+    ano_p = "im/han.jpg";
+  }
+
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+   
+    res[5] === 1 &&
+    res[6] === 1 &&
+    res[7] === 2 
+  ) {
+    ano = "에버랜드";
+    ano_p = "im/ev.jpg";
+  }
+
+
+
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 2 &&
+    res[6] === 1 &&
+    res[7] === 2 
+  ) {
+    ano = "잠실 야구장";
+    ano_p = "im/jam.jpg";
+  }
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 2 &&
+    res[6] === 1 &&
+    res[7] === 1 
+  ) {
+    ano = "인천 차이나타운";
+    ano_p = "im/ic.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+   
+    res[5] === 1 &&
+  
+    res[7] === 2
+  ) {
+    ano = "지중해마을";
+    ano_p = "im/zi.jpg";
+  }
+
+
+
+
+/*5개*/
+
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[4] === 2 
+
+  ) {
+    ano = "파주 프로방스 마을";
+    ano_p = "im/pp.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 1 &&
+    res[2] === 2 &&
+    res[3] === 1 &&
+    res[5] === 1 
+  
+  ) {
+    ano = "충주 활옥동굴";
+    ano_p = "im/chh.jpg";
+  }
+
+
+else if (
+    
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 2 &&
+    res[4] === 2 &&
+   
+    res[6] === 1 
+  
+  ) {
+    ano = "해운대";
+    ano_p = "im/hae.webp";
+  }
+
+
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[3] === 1 &&
+    res[5] === 1 &&
+    res[7] === 2 
+  ) {
+    ano = "가평 빠지";
+    ano_p = "im/bba.jpg";
+  }
+
+
+
+
+/*4개*/
+
+
+else if (
+    res[1] === 2 &&
+    res[2] === 1 &&
+    res[3] === 1 &&
+    res[6] === 1
+  ) {
+    ano = "대천 해수욕장";
+    ano_p = "im/대천해수욕장.jpg";
+  }
+else if (
+    res[0] === 1 &&
+    res[1] === 2 &&
+    res[3] === 2 &&
+    res[6] === 1 
+  ) {
+    ano = "캐리비안베이";
+    ano_p = "im/캐리비안베이.jpg";
+  }
+else if (
+    res[0] === 2 &&
+   
+    res[2] === 2 &&
+    res[3] === 2 &&
+   
+    res[7] === 2
+  ) {
+    ano = "화성 글램핑장 제부도 글램비";
+    ano_p = "im/글램비 글램핑.jpg";
+  }
+
+
+  /*3개*/
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[5] === 1 
+  ) {
+    ano = "남산타워";
+    ano_p = "im/남산타워.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[7] === 1 
+  ) {
+    ano = "경복궁";
+    ano_p = "im/경복궁.jpg";
+  }
+
+else if (
+    res[0] === 2 &&
+    res[1] === 2 &&
+    res[6] === 1 
+  ) {
+    ano = "노량진 시장";
+    ano_p = "노량진 시장.jpg";
+  }
+
+
+
+/*2개*/
+
+
+else if (
+
+    res[1] === 1 &&
+    res[2] === 1 
+   
+  ) {
+    ano = "천부해중전망대";
+    ano_p = "im/천부해중전망대.jpg";
+  }
+
+else if (
+    res[1] === 1 &&
+    res[2] === 2 
+  ) {
+    ano = "코엑스";
+    ano_p = "im/코엑스.jpg";
+  }
+
+
+
+
+
+/*나머지*/
+else {
+    ano = "롯데월드";
+    ano_p = "im/lot.png";
+  }
+
+
+
+
+
+}
+
+  </script>
+</body>
+</html>
